@@ -1,9 +1,11 @@
-
 /*
  * Div
  */
 function div(name){
-  that = $('<div></div>');
+  if(!name){
+    name = '<div></div>';
+  }
+  that = $(name);
   that.hasA = function(object){
     this.append(object);
     this[object.name]=object;
@@ -21,7 +23,10 @@ function div(name){
  * Audio
  */
 function audio(name){
-  that = $('<audio class="music"></audio>');
+  if(!name){
+    name = '<audio class="music"></audio>';
+  }
+  that = $(name);
   that.src = function(source){
     that.append($('<source src="audio/music.ogg" type="audio/ogg" />'));
     that.find('source').attr("src", source);
@@ -49,7 +54,10 @@ function audio(name){
  * Form
  */
 function form(name){
-  that = $('body').append('<form></form>');
+  if(!name){
+    name = '<form></form>'
+  }
+  that = $(name);
   that.name = function(name){
     that.data("name", name);
   };
@@ -61,7 +69,10 @@ function form(name){
  * Audio
  */
 function image(name){
-  that = $('<img src="" />');
+  if(!name){
+    name='<img src="" />';
+  }
+  that = $(name);
   that.name = function(name){
     that.data("name", name);
   };
